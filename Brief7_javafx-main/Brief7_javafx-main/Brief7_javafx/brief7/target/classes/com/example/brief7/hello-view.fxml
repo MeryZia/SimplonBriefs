@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="871.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.brief7.MainController">
+   <children>
+      <Button fx:id="btnInsert" layoutX="47.0" layoutY="314.0" mnemonicParsing="false" onAction="#InsertOnClick" prefHeight="32.0" prefWidth="75.0" style="-fx-background-color: #457b9d;" text="Insert">
+         <effect>
+            <ColorAdjust brightness="0.03" />
+         </effect>
+      </Button>
+      <TableView fx:id="View" layoutX="334.0" layoutY="71.0" prefHeight="277.0" prefWidth="521.0" style="-fx-background-color: #ECF4EA;">
+        <columns>
+            <TableColumn fx:id="CID" prefWidth="37.999969482421875" text="ID" />
+          <TableColumn fx:id="CFamilyN" prefWidth="90.6666259765625" text="Family name" />
+          <TableColumn fx:id="CFirstN" prefWidth="84.66671752929688" text="First name" />
+            <TableColumn fx:id="CEmail" prefWidth="95.33331298828125" text="Email" />
+            <TableColumn fx:id="CAddr" prefWidth="70.666748046875" text="Address" />
+            <TableColumn fx:id="CCity" prefWidth="66.0" text="City" />
+            <TableColumn fx:id="CCountry" prefWidth="84.66668701171875" text="Coutry" />
+        </columns>
+      </TableView>
+      <VBox layoutX="47.0" layoutY="51.0" prefHeight="208.0" prefWidth="88.0" spacing="20.0" style="-fx-background-color: ECF4EA;">
+         <children>
+            <Label text="ID" textFill="#447a9c">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font></Label>
+            <Label text="Family name" textFill="#457b9d">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font></Label>
+            <Label text="First name" textFill="#457b9d">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font></Label>
+            <Label text="Email" textFill="#457b9d">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font></Label>
+            <Label text="Address" textFill="#457b9d">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font></Label>
+            <Label text="City" textFill="#457b9d">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font></Label>
+            <Label text="Coutry" textFill="#457b9d">
+               <font>
+                  <Font name="Arial Black" size="12.0" />
+               </font></Label>
+         </children>
+      </VBox>
+      <VBox layoutX="134.0" layoutY="54.0" prefHeight="202.0" prefWidth="152.0" spacing="10.0" style="-fx-background-color: #ECF4EA;">
+         <children>
+            <TextField fx:id="txtID" promptText="Identifier" text="1" />
+            <TextField fx:id="txtFamilyN" promptText="Last name" text="zxczx" />
+            <TextField fx:id="txtFirstN" promptText="First name" text="zxczx" />
+            <TextField fx:id="txtEmail" promptText="example@email.com" text="zxczx@asdas.ma" />
+            <TextField fx:id="txtAddr" promptText="Street Address" text="asdas" />
+            <TextField fx:id="txtCity" promptText="City" text="asdas" />
+            <TextField fx:id="txtCountry" promptText="Country" text="asdas" />
+         </children>
+      </VBox>
+      <Button fx:id="btnEdit" layoutX="135.0" layoutY="314.0" mnemonicParsing="false" onAction="#EditOnClick" prefHeight="32.0" prefWidth="75.0" style="-fx-background-color: #457b9d;" text="Edit" />
+      <Button fx:id="btnDelete" layoutX="224.0" layoutY="315.0" mnemonicParsing="false" onAction="#DeleteOnClick" prefHeight="32.0" prefWidth="75.0" style="-fx-background-color: #457b9d;" text="Delete" />
+      <Label fx:id="testId" layoutX="353.0" layoutY="34.0" />
+   </children>
+</AnchorPane>

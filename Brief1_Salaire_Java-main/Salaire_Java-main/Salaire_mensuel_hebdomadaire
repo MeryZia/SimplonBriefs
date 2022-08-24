@@ -1,0 +1,117 @@
+package ex1_jv;
+
+import java.util.Scanner;
+
+public class Simulateur_salaire {
+
+	static void calcule_s_s(String Nom) {
+		Scanner hebdo = new Scanner(System.in);// le nombre d’heure travaillée par semaine
+		double tarif;
+		double heure_s;
+		
+		do {
+			System.out.println("Enter le nombre d’heure travaillée par semaine (doit etre inférieur ou equal a 50) \n");
+			heure_s = hebdo.nextDouble();
+			
+			if (heure_s > 0 && heure_s <= 50) {
+				do {
+					System.out.println("Enter le tarif (doit etre superier ou equal a 25) \n");
+					tarif = hebdo.nextDouble();
+					if (tarif >= 25 && tarif >0) {
+						if (heure_s > 40 && heure_s <= 50) {
+		
+							double rslt_s = 40 * tarif;
+		
+							double heureExtra = heure_s - 40;// calculer nombre d'heures extra
+							double tarifPlus = tarif + (tarif * 0.5);
+							double rslt_s_dePlus = heureExtra * tarifPlus;
+		
+							double rsltFinal_s = rslt_s + rslt_s_dePlus;// salaire final
+		
+							System.out.println(
+									"Votre salaire Mr/Mme " + Nom + " est :" + rsltFinal_s + "Dhs (avec extra heures)");
+		
+						} else if (heure_s > 0 && heure_s <= 40) {
+							double rslt_s = heure_s * tarif;
+							System.out.println("Votre salaire Mr/Mme " + Nom + " est :" + rslt_s + " Dhs");
+						} else {
+							System.out.println("Le nombre entre est incorrect");
+						}
+					} else {
+						System.out.println("Le nombre de tarif est incorrect ");}//tarif
+				  }while(tarif <= 25 && tarif < 0);
+				} else {
+					System.out.println("Le nombre d'heures est incorrect ");}//hour
+		}while(heure_s < 0 && heure_s >= 50);
+			hebdo.close();
+	}//fin procedure
+
+	static void calcule_s_m(String Nom) {
+		Scanner mensuel = new Scanner(System.in);// le nombre d’heure travaillée par mois
+		double heure_m;
+		double tarif;
+		
+		do {
+			System.out.println("Enter le nombre d’heure travaillée par mois  (doit etre inférieur ou equal a 200) \n");
+			heure_m = mensuel.nextDouble();
+			
+			if (heure_m > 0 && heure_m <= 200) {
+				
+				do{
+					System.out.println("Enter le tarif  (doit etre superier ou equal a 20) \n");
+					tarif = mensuel.nextDouble();
+					if (tarif >= 20 && tarif > 0) {
+					
+						if (heure_m > 180 && heure_m <= 200) {
+		
+							double rslt_m = 40 * tarif;
+		
+							double heureExtra = heure_m - 180;// calculer nombre d'heures extra
+							double tarifPlus = tarif + (tarif * 0.5);
+							double rslt_m_dePlus = heureExtra * tarifPlus;
+		
+							double rsltFinal_m = rslt_m + rslt_m_dePlus;// salaire final
+		
+							System.out.println(
+									"Votre salaire Mr/Mme " + Nom + " est :" + rsltFinal_m + "Dhs (avec extra heures)");
+		
+						} else if (heure_m > 0 && heure_m <= 180) {
+							double rslt_s = heure_m * tarif;
+		
+							System.out.println("Votre salaire Mr/Mme " + Nom + " est :" + rslt_s + " Dhs");}
+						  else {System.out.println("Le nombre entre est incorrect");}
+					}else {System.out.println("Le nombre de tarif est incorrect");}	
+				} while (tarif <= 20 && tarif < 0); //tarif
+	
+				
+			} else {System.out.println("Le nombre d'heures est incorrect ");}//heure
+		}while(heure_m < 0 && heure_m >= 200);
+		mensuel.close();
+		
+	}//fin procedure
+
+	public static void main(String[] args) {
+
+		System.out.println("Entre votre nom\n");
+		Scanner nom = new Scanner(System.in);
+		String nm = nom.nextLine();
+		System.out.println("Bienvenue MR/Mme " + nm);
+
+		System.out.println(
+				"Veuillez taper un mode de payement \r si hebdomadaire taper  => 1 \r si mensuel taper\t=> 2 \n");
+		Scanner mode = new Scanner(System.in);
+		int md = mode.nextInt();
+		switch (md) {
+		case 1:
+			calcule_s_s(nm);
+			break;
+
+		case 2:
+			calcule_s_m(nm);
+			break;
+		}
+		nom.close();
+		mode.close();
+	}
+
+}

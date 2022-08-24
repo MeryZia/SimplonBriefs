@@ -1,0 +1,2 @@
+# Salaire_Java
+Voici mon code pour le premier brief qui concernait le calcul du salaire de chaque travailleur et qui dépend du mode qu'il a choisi pour être payé, que ce soit par semaine ou par mois. Par semaine les heures de travail ne dépassent pas 50 heures, ce qui est la première condition que je mets dans mon code pour être vérifié. et c'est la même chose par mois (ne dépassant pas 200 heures).
